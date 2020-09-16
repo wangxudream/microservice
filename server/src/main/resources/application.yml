@@ -14,7 +14,7 @@ hystrix:
 
 spring:
   application:
-    name: microservice-feign
+    name: microservice-server
   cloud:
     nacos:
       discovery:
