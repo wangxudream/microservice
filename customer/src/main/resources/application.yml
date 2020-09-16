@@ -1,0 +1,54 @@
+server:
+  port: 9090
+
+
+# Hystrix 配置
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 50000
+
+
+spring:
+  application:
+    name: microservice-customer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: false
+#          #开启小写验证，默认feign根据服务名查找都是用的全大写
+#          lowerCaseServiceId: true
+
+#      routes:
+#
+#        - id: ddxj-infocheck-routh
+#          uri: lb://ddxj-infocheck
+#          filters:
+#            - PreserveHostHeader #设置用路由的host覆盖服务内的host
+#          predicates:
+#            - Path=/infocheck/**
+#
+#
+#        - id: ddxj-system-routh
+#          uri: lb://ddxj-system
+#          filters:
+#            - PreserveHostHeader
+#          predicates:
+#            - Path=/system/**
+#
+#        - id: ddxj-xfzx-routh
+#          uri: lb://ddxj-xfzx
+#          filters:
+#            - PreserveHostHeader
+#          predicates:
+#            - Path=/xfzx/**
+
+
+
